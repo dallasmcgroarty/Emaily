@@ -1,6 +1,6 @@
 /**
  * Project notes
- *  - react, node, express, mongoDB, stripe
+ *  - react, node, express, mongoDB, stripe, passport JS
  */
 
 /**
