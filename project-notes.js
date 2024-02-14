@@ -9,3 +9,7 @@
  *  - makes dealing with HTTP traffic easier
  *  - best node extraction to create back end servers with
  */
+
+/**
+ * Using mongoDB for database and render to host everything
+ */
