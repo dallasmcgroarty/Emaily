@@ -1,20 +1,10 @@
 const express = require('express');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
+require('./services/passport');
 
 const app = express();
 
-passport.use(
-  new GoogleStrategy({
-    clientID: keys.googleClientID,
-    clientSecret: keys.googleClientSecret,
-    callbackURL: '/auth/google/callback'
-  }, 
-  (accessToken) =>{
-    console.log(accessToken);
-  })
-);
+// require file that returns a function and call it immediately
+require('./routes/authRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 
