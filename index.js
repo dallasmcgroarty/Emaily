@@ -30,6 +30,17 @@ require('./routes/billingRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 
+if (process.env.NODE_ENV === 'production') {
+  // express will serve up production assets
+  app.use(express.static('client/build'));
+  
+  // express will serve up index.html if route not recognized
+  const path = require('path');
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
+
 // https://emaily-lkif.onrender.com/
 
 app.listen(PORT, () => {
