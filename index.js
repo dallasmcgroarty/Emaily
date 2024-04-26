@@ -6,6 +6,7 @@ const keys = require('./config/keys');
 const bodyParser = require('body-parser');
 
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI)
@@ -27,13 +28,14 @@ app.use(passport.session());
 // require file that returns a function and call it immediately
 require('./routes/authRoutes')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_ENV === 'production') {
   // express will serve up production assets
   app.use(express.static('client/build'));
-  
+
   // express will serve up index.html if route not recognized
   const path = require('path');
   app.get('*', (req, res) => {
