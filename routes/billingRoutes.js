@@ -1,6 +1,6 @@
 //const passport = require('passport');
 const keys = require('../config/keys');
-const stripe = require('stripe')(keys.stripePublishableKey);
+const stripe = require('stripe')(keys.stripeSecretKey);
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = (app) => {
