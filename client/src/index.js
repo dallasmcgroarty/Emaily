@@ -6,6 +6,9 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import reducers from './reducers';
 import { thunk } from 'redux-thunk';
+// dev axios helpers
+import axios from 'axios';
+window.axios = axios
  
 const el = document.getElementById("root");
  
