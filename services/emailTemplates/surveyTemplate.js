@@ -16,7 +16,7 @@ module.exports = (survey) => {
             display: inline-block;
             width: 75px;
             text-decoration: none;" 
-            href="${keys.redirectDomain}/api/surveys/thanks">Yes</a>
+            href="${keys.redirectDomain}/api/surveys/${survey.id}/yes">Yes</a>
 
             <a style="padding: 6px 10px;
             background-color: lightcoral;
@@ -25,7 +25,7 @@ module.exports = (survey) => {
             display: inline-block;
             width: 75px;
             text-decoration: none;" 
-            href="${keys.redirectDomain}/api/surveys/thanks">No</a>
+            href="${keys.redirectDomain}/api/surveys/${survey.id}/no">No</a>
           </div>
         </div>
       </body>
